@@ -3,7 +3,7 @@ R toolkit to perform Fisher-exact tests on the behavioral data of zebrafish trea
 
 The purpose of this analysis is to causally assess whether chronic low-level exposure to pollution has an effect on the behavior of zebrafish. This is done with the Fisher-exact test, which constructs a null randomization distribution for the observed data to be tested against. Several test statistics are used to better capture the data between treatment groups: the difference in means, the area between line plot curves, the difference in means at a single coherence, and the difference in variances at a single coherence. These tests can be performed for each measured behavior: proportion of correct turns, average orientation change, and average bout rate. A text file with p-values is created and JPG files of the null randomization distributions can also be created. Additionally, JPG files with line plots and boxplots summarizing each measured variable can be produced. 
 
-A primary focus in creating this analysis was the make the code modular for smaller and more specific analyses. So, the individual functions nested within the fishanalysis() function can be used on their own.
+A primary focus in creating this toolkit was to make the code modular for smaller and more specific analyses. So, the individual functions nested within the fishanalysis() function can be used on their own.
 
 ## Required Packages
 The packages "ggplot2", "cowplot", and "plyr" are used within the code. These may need to be installed first. This can be done in the R console via install.packages().
