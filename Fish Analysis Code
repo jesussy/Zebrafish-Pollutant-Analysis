@@ -1,4 +1,4 @@
-fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file, path) {
+fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path) {
   ## Create functions to visualize data for each measured behavior ##
   if(plots) {
     plot.correctturn <- function(color, file, path) {
@@ -16,17 +16,17 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
         }
         
         # This does the summary. For each group's data frame, return a vector with
-        # N, median, and sd
+        # N, mean, and sd
         datac <- ddply(data, groupvars, .drop=.drop,.fun = function(xx, col) {
           c(N = length2(xx[[col]], na.rm=na.rm),
             median = median(xx[[col]], na.rm=na.rm),
             sd = sd(xx[[col]], na.rm=na.rm))
         },measurevar)
         
-        # Rename the "median" column    
+        # Rename the "mean" column    
         datac <- rename(datac, c("median" = measurevar))
         
-        datac$se <- datac$sd / sqrt(datac$N)  # Calculate standard error of the median
+        datac$se <- datac$sd / sqrt(datac$N)  # Calculate standard error of the mean
         
         # Confidence interval multiplier for standard error
         # Calculate t-statistic for confidence interval: 
@@ -109,7 +109,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
       library(ggplot2)
       library(cowplot)
       
-      # Create summary statistics function
+      # Create summary statistics function (modified from cookbook-r.com by Winston Chang)
       summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,conf.interval=.95, .drop=TRUE) {
         library(plyr)
         # New version of length which can handle NA's: if na.rm==T, don't count them
@@ -217,7 +217,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
       library(ggplot2)
       library(cowplot)
       
-      # Create summary statistics function
+      # Create summary statistics function (modified from cookbook-r.com by Winston Chang)
       summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,conf.interval=.95, .drop=TRUE) {
         library(plyr)
         # New version of length which can handle NA's: if na.rm==T, don't count them
@@ -321,7 +321,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
   }
   
   ## Create functions to perform Fisher's test via several t-statistics ##
-  fishertest.mean <- function(randomizations, measure, plot, file, path) {
+  fishertest.mean <- function(randomizations = 100000, measure, plot, file, path) {
     library(ggplot2)
     
     # Read in fish data
@@ -416,7 +416,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
       cat("T = Mean:",pval,"\n")
     }
   }
-  fishertest.area <- function(randomizations, measure, plot, file, path) {
+  fishertest.area <- function(randomizations = 100000, measure, plot, file, path) {
     library(ggplot2)
     
     # Read in fish data
@@ -574,7 +574,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
     }
     
   }
-  fishertest.mean.coherence <- function(randomizations, measure,coherence, plot, file, path) {
+  fishertest.mean.coherence <- function(randomizations = 100000, measure,coherence, plot, file, path) {
     library(ggplot2)
     
     # Read in fish data
@@ -671,7 +671,7 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
       cat("T = Mean at coherence ", coherence, ": ",pval,"\n",sep="")
     }
   }
-  fishertest.variance.coherence <- function(randomizations, measure, coherence, plot, file, path) {
+  fishertest.variance.coherence <- function(randomizations = 100000, measure, coherence, plot, file, path) {
     # Read in fish data
     setwd(path)
     fish <- read.table(file, header = T)
@@ -796,4 +796,3 @@ fishanalysis <- function(randomizations, plots = FALSE, fisherplot = FALSE, file
     sink()
   }
 }
- 
