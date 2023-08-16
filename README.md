@@ -42,7 +42,7 @@ plot.orientation <- function(color, file, path)
 
 - path: String parameter containing the path to the provided file.
 
-Example: plot.orientation("red", "PFOS_30_1.txt", "C:/Users/Jesus Lopez/Desktop/Zebrafish Data/August15_2023")
+Example: plot.orientation("#F20219", "PFOS_30_1.txt", "C:/Users/Jesus Lopez/Desktop/Zebrafish Data/August15_2023")
 
 ## plot.boutrate() Function details
 This function creates line plots and boxplots for the average bout rate of each fish across all coherences.
