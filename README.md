@@ -12,9 +12,6 @@ fisherplot: Boolean parameter to decide whether to produce null randomization di
 
 file: String parameter ending with ".txt" for the text file containing the behavioral data. The file contents are required to be delimited by spaces with columnar data and headings for at least "Condition", "Coherence", "CorrectTurn", "AverageOrientation", and "AverageBouts". For example:
 
-  Condition  Coherence  CorrectTurn  AverageOrientation  AverageBouts
-  WT_11      0          0.5          25                  1
-  PFOS_11_1  1          0.4          22                  0.7
-  ...
+#yuh
 
 path: String parameter containing the path to the provided file.
