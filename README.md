@@ -16,7 +16,7 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
 
 - path: String parameter containing the path to the provided file.
 
-## plot.correctturn() Function details
+## plot.correctturn()
 This function creates line plots and boxplots for the proportion of correct turns of each fish across all coherences.
 
 plot.correctturn <- function(color, file, path) 
