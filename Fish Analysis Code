@@ -1,8 +1,7 @@
-fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path) {
+fishanalysis <- function(randomizations = 100000, plots = TRUE, fisherplot = FALSE, file, path) {
   ## Create functions to visualize data for each measured behavior ##
   if(plots) {
     plot.correctturn <- function(color, file, path) {
-      library(ggforce)
       library(ggplot2)
       library(cowplot)
       
@@ -105,7 +104,6 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
       ggsave(imagename, plot = final, width = 7, height = 3)
     }
     plot.orientation <- function(color, file, path) {
-      library(ggforce)
       library(ggplot2)
       library(cowplot)
       
@@ -213,7 +211,6 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
       ggsave(imagename, plot = final, width = 7, height = 3)
     }
     plot.boutrate <- function(color, file, path) {
-      library(ggforce)
       library(ggplot2)
       library(cowplot)
       
@@ -672,6 +669,8 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
     }
   }
   fishertest.variance.coherence <- function(randomizations = 100000, measure, coherence, plot, file, path) {
+    library(ggplot2)
+    
     # Read in fish data
     setwd(path)
     fish <- read.table(file, header = T)
