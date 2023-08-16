@@ -27,7 +27,7 @@ plot.correctturn <- function(color, file, path)
 
 - path: String parameter containing the path to the provided file.
 
-## plot.orientation() Function details
+## plot.orientation()
 This function creates line plots and boxplots for the average orientation change of each fish across all coherences.
 
 plot.orientation <- function(color, file, path) 
@@ -49,7 +49,7 @@ plot.boutrate <- function(color, file, path)
 
 - path: String parameter containing the path to the provided file.
 
-## fishertest.mean() Function details
+## fishertest.mean()
 This function performs a Fisher-exact test on a measured variable. It uses the difference in the mean of the measured variable between the active treatment and control treatment groups as the test statistic. It can also produce a null randomization distribution histogram.
 
 fishertest.mean <- function(randomizations = 100000, measure, plot, file, path)
@@ -64,7 +64,7 @@ fishertest.mean <- function(randomizations = 100000, measure, plot, file, path)
 
 - path: String parameter containing the path to the provided file.
 
-## fishertest.area() Function details
+## fishertest.area()
 This function performs a Fisher-exact test on a measured variable. It uses the area between the line plots of the plotted medians of the measured variables for the active treatment and control treatment groups as the test statistic. It can also produce a null randomization distribution histogram.
 
 fishertest.area <- function(randomizations = 100000, measure, plot, file, path)
@@ -79,7 +79,7 @@ fishertest.area <- function(randomizations = 100000, measure, plot, file, path)
 
 - path: String parameter containing the path to the provided file.
 
-## fishertest.mean.coherence() Function details
+## fishertest.mean.coherence()
 This function performs a Fisher-exact test on a measured variable. It uses the difference in the mean of the measured variable at a specified coherence between the active treatment and control treatment groups as the test statistic. It can also produce a null randomization distribution histogram.
 
 fishertest.mean.coherence <- function(randomizations = 100000, measure, coherence, plot, file, path)
@@ -94,7 +94,7 @@ fishertest.mean.coherence <- function(randomizations = 100000, measure, coherenc
 
 - path: String parameter containing the path to the provided file.
 
-## fishertest.variance.coherence() Function details
+## fishertest.variance.coherence()
 This function performs a Fisher-exact test on a measured variable. It uses the difference in the variance of the measured variable at a specified coherence between the active treatment and control treatment groups as the test statistic. It can also produce a null randomization distribution histogram.
 
 fishertest.variance.coherence <- function(randomizations = 100000, measure, coherence, plot, file, path)
@@ -108,3 +108,5 @@ fishertest.variance.coherence <- function(randomizations = 100000, measure, cohe
 - file: String parameter ending with ".txt" for the text file containing the behavioral data. The file contents are required to be delimited by spaces with columnar data and headings for at least "Condition", "Coherence", "CorrectTurn", "AverageOrientation", and "AverageBouts". 
 
 - path: String parameter containing the path to the provided file.
+
+Example: fishertest.variance.coherence(100000, "AverageBouts", 100, FALSE, "PFOS_30_1.txt", "C:/Users/Jesus Lopez/Desktop/Zebrafish Data/August15_2023")
