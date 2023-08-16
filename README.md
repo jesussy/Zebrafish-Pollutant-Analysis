@@ -1,6 +1,9 @@
 # Zebrafish-Pollutant-Analysis
 R toolkit to perform Fisher-exact tests on the behavioral data of zebrafish treated with pollutants. Visualizes measured data, produces p-values for several test statistics, and creates null randomization distributions.
 
+## Required Packages
+The packages "ggplot2", "cowplot", and "plyr" are used within the code. These may need to be installed first. This can be done in the R console via install.packages().
+
 ## fishanalysis() 
 This function encapsulates several functions that visualize data and perform Fisher-exact tests. It performs each statistical test for each measured variable and creates a text file to print the p-values to.
 
