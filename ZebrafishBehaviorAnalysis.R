@@ -1,13 +1,4 @@
 ## Zebrafish Behavior Analysis ## 
-
-  # randomizations: integer, number of randomizations to be performed in each fisher-exact test
-  # plots: boolean, output lineplots and boxplots for each behaviour measure
-  # fisherplot: boolean, output null randomizations distribution histograms for each fisher-exact test
-  # file: string, text file name containing behavioral data
-  # path: string, path to text file
-
-  # Uses the packages "ggplot2", "cowplot", and "plyr." These may need to be installed first.
-
 fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path) {
   ## Create functions to visualize data for each measured behavior ##
   if(plots) {
@@ -804,18 +795,4 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
     fishertest.variance.coherence(randomizations, measure, 100, fisherplot, file, path)
     sink()
   }
-}
-
-fishanalysis(randomizations = 1000, 
-             plots = TRUE, 
-             fisherplot = TRUE, 
-             file = "PFOS_30_1.txt",
-             path = "C:/Users/Jesus Lopez/Desktop/Systems Biology Research/Zebrafish Inputs & Outputs/test")
-
-# Example:
-#fishanalysis(randomizations = 100000, 
-#             plots = TRUE, 
-#             fisherplot = FALSE, 
-#             file = "PFNA_10_200.txt",
-#             path = "C:/Users/Jesus Lopez/Desktop/Zebrafish Data/August15_2023")
- 
+} 
