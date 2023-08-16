@@ -1,7 +1,7 @@
 # Zebrafish-Pollutant-Analysis
 R functions to perform Fisher-exact tests on the behavioral data of zebrafish affected by pollution. Visualizes measured data, produces p-values for several test statistics, and creates null randomization distributions.
 
-## fishanalysis() Function details
+## fishanalysis() 
 This function encapsulates several functions that visualize data and perform Fisher-exact tests. It performs each statistical test for each measured variable and creates a text file to print the p-values to.
 
 fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path)
