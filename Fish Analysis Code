@@ -450,7 +450,7 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
     fishN <- length(fish$Condition)
     sciencefish <- data.frame(i = c(1:fishN),
                               W.obs = fish$Condition,
-                              Y.obs = fish$CorrectTurn,
+                              Y.obs = fish[[measure]],
                               Y.0 = rep(c(NA), times = fishN),
                               Y.1 = rep(c(NA), times = fishN))
     
@@ -610,7 +610,7 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
     fishN <- length(fish$Condition)
     sciencefish <- data.frame(i = c(1:fishN),
                               W.obs = fish$Condition,
-                              Y.obs = fish$CorrectTurn,
+                              Y.obs = fish[[measure]],
                               Y.0 = rep(c(NA), times = fishN),
                               Y.1 = rep(c(NA), times = fishN))
     
@@ -705,7 +705,7 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
     fishN <- length(fish$Condition)
     sciencefish <- data.frame(i = c(1:fishN),
                               W.obs = fish$Condition,
-                              Y.obs = fish$CorrectTurn,
+                              Y.obs = fish[[measure]],
                               Y.0 = rep(c(NA), times = fishN),
                               Y.1 = rep(c(NA), times = fishN))
     
