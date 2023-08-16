@@ -6,7 +6,7 @@ This function encapsulates several functions that visualize data and perform Fis
 
 fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path)
 
-randomizations: 
+randomizations: \n
 Integer parameter for the number of randomizations to be performed for each fisher-exact test. The ideal amount is N (total number of units) choose Nt (units that received active treatment) but the ideal amount is often too computationally intensive.
 
 plots: 
@@ -18,7 +18,7 @@ Boolean parameter to decide whether to produce null randomization distribution p
 file: 
 String parameter ending with ".txt" for the text file containing the behavioral data. The file contents are required to be delimited by spaces with columnar data and headings for at least "Condition", "Coherence", "CorrectTurn", "AverageOrientation", and "AverageBouts". 
 
-path: 
+path:
 String parameter containing the path to the provided file.
 
 ## plot.correctturn() Function details
