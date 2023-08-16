@@ -6,7 +6,7 @@ This function encapsulates several functions that visualize data and perform Fis
 
 fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FALSE, file, path)
 
-randomizations: Integer parameter for the number of randomizations to be performed for each fisher-exact test. The default value is 100000. The ideal amount is N (total number of units) choose Nt (units that received active treatment) but the ideal amount is often too computationally intensive.
+- randomizations: Integer parameter for the number of randomizations to be performed for each fisher-exact test. The default value is 100000. The ideal amount is N (total number of units) choose Nt (units that received active treatment) but the ideal amount is often too computationally intensive.
 
 plots: Boolean parameter to decide whether to produce descriptive line plots and boxplots for each behavior. The default value is false.
 
