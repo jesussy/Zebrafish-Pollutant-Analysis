@@ -536,7 +536,7 @@ fishanalysis <- function(randomizations = 100000, plots = FALSE, fisherplot = FA
       
       # Define the function to calculate the difference between the two lines
       difference <- function(x) {
-        line0(x) - line1(x)
+        line1(x) - line0(x)
       }
       
       # Find the area between the lines using numerical integration
